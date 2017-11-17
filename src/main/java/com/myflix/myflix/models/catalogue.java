@@ -24,12 +24,17 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+
+
 /**
  *
  * @author andy
  */
 public class catalogue {
 
+    
+    String CatalogueServer="35.196.119.167 ";
+    
     public void catalogue() {
 
     }
@@ -38,7 +43,7 @@ public class catalogue {
 
         Video videol = new Video();
 
-        String videos = "http://a41-catalogue.cloudapp.net:8080/myflix/videos?filter={\"video.uuid\":\"" + sUUID + "\"}";
+        String videos = "http://CatalogueServer/myflix/videos?filter={\"video.uuid\":\"" + sUUID + "\"}";
 
         JsonObject obj = new JsonObject();
         obj = Web.GetJson(videos);
@@ -80,7 +85,7 @@ public class catalogue {
     public LinkedList<Video> videos() throws IOException {
 
         LinkedList<Video> videolist = new LinkedList();
-        String videos = "http://a41-catalogue.cloudapp.net:8080/myflix/videos";
+        String videos = "http://CatalogueServer/myflix/videos";
 
         JsonObject obj = new JsonObject();
         obj = Web.GetJson(videos);
