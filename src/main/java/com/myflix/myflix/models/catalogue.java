@@ -33,7 +33,7 @@ import java.util.List;
 public class catalogue {
 
     
-    String CatalogueServer="35.196.119.167 ";
+    String CatalogueServer="34.74.239.245";
     
     public void catalogue() {
 
@@ -43,7 +43,7 @@ public class catalogue {
 
         Video videol = new Video();
 
-        String videos = "http://CatalogueServer/myflix/videos?filter={\"video.uuid\":\"" + sUUID + "\"}";
+        String videos = "http://"+CatalogueServer+"/myflix/videos?filter={\"video.uuid\":\"" + sUUID + "\"}";
 
         JsonObject obj = new JsonObject();
         obj = Web.GetJson(videos);
@@ -85,13 +85,36 @@ public class catalogue {
     public LinkedList<Video> videos() throws IOException {
 
         LinkedList<Video> videolist = new LinkedList();
-        String videos = "http://CatalogueServer/myflix/videos";
+        String videos = "http://"+CatalogueServer+"/myflix/videos";
 
         JsonObject obj = new JsonObject();
         obj = Web.GetJson(videos);
 
         List<String> ll = obj.names();
-        JsonObject obj2 = obj.get("_embedded").asObject();
+        JsonArray obj2 = null;
+        try{
+            obj2=obj.get("_embedded").asArray();
+        }catch(Exception et){
+            System.out.println("Can't get _emmbedded "+et);
+        }
+        
+        for (JsonValue item:obj2){
+            System.out.println(item);
+            JsonObject obj3 = item.asObject();
+            JsonObject jVideo=obj3.get("video").asObject();
+            List<String> names = jVideo.names();
+            HashMap<String, String> fields = new HashMap();
+            for (String name : names) {
+                JsonValue Value = jVideo.get(name);
+                String sValue = Value.toString();
+                fields.put(name, sValue);
+
+            }
+            Video vv = new Video();
+            vv.setFields(fields);
+            videolist.add(vv);
+        } 
+        /*
         ll = obj2.names();
         JsonArray items = obj2.get("rh:doc").asArray();
         int number = items.size();
@@ -118,7 +141,7 @@ public class catalogue {
             }
 
         }
-
+        */
         return videolist;
     }
 

@@ -39,7 +39,7 @@ public final class Web {
         HttpURLConnection hc = null;
         try {
             hc = (HttpURLConnection) videos.openConnection();
-            String login = "admin:admin";
+            String login = "admin:changeit";
             final byte[] authBytes = login.getBytes(StandardCharsets.UTF_8);
             final String encoded = Base64.getEncoder().encodeToString(authBytes);
             hc.addRequestProperty("Authorization", "Basic " + encoded);

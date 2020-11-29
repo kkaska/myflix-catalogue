@@ -34,7 +34,7 @@
                     <h2 class="name"><%=name%></h2>
                     <h3 class="category">Catagory: <%=category%></h3>
                     <a href="/myflix/video/<%=suuid%>">
-                    <img src="http://a41-stream<%=server%>.cloudapp.net/pics/<%=thumb%>">
+                    <img src="http://104.196.177.101/pics/<%=thumb%>">
                     </a>
                     <%
                 }

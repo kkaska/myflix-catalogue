@@ -13,11 +13,11 @@ public final class Convertors {
     public void Convertors() {
 
     }
-
+/*
     public static java.util.UUID getTimeUUID() {
         return java.util.UUID.fromString(new com.eaio.uuid.UUID().toString());
     }
-    
+ */   
     
 
     public static byte[] asByteArray(java.util.UUID uuid) {
