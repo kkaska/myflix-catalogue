@@ -9,11 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <link href="http://vjs.zencdn.net/4.11/video-js.css" rel="stylesheet">
-    <script src="http://vjs.zencdn.net/4.11/video.js"></script>
-        <link href="http://vjs.zencdn.net/4.11/video-js.css" rel="stylesheet">
-    <script src="http://vjs.zencdn.net/4.11/video.js"></script>
+       <link href="//vjs.zencdn.net/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/7.8.2/video.min.js"></script>
         <title>myFlix Video</title>
     </head>
     <body>
@@ -31,9 +28,9 @@
                     <div id="instructions">
 
       <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px"
-	     controls preload="none" poster='http://a41-stream<%=server%>.cloudapp.net/pics/<%=pic%>'
+	     controls preload="none" poster='http://104.196.177.101/pics/<%=pic%>'
 	     data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
-	<source src="rtmp://a41-stream<%=server%>.cloudapp.net:1935/vod2/<%=file%>" type='rtmp/mp4' />
+	<source src="http://104.196.177.101/mp4/<%=file%>" type='video/mp4' />
 	
       </video>
       </div>

@@ -50,7 +50,28 @@ public class catalogue {
         //System.out.println(sBuff);
 
         List<String> ll = obj.names();
-        JsonObject obj2 = obj.get("_embedded").asObject();
+        JsonArray obj2 = null;
+        try{
+            obj2=obj.get("_embedded").asArray();
+        }catch(Exception et){
+            System.out.println("Can't get _emmbedded "+et);
+        }
+        for (JsonValue item:obj2){
+            System.out.println(item);
+            JsonObject obj3 = item.asObject();
+            JsonObject jVideo=obj3.get("video").asObject();
+            List<String> names = jVideo.names();
+            HashMap<String, String> fields = new HashMap();
+            for (String name : names) {
+                JsonValue Value = jVideo.get(name);
+                String sValue = Value.toString();
+                fields.put(name, sValue);
+
+            }
+            videol.setFields(fields);
+        } 
+        
+        /*
         ll = obj2.names();
         JsonArray items = obj2.get("rh:doc").asArray();
         int number = items.size();
@@ -77,7 +98,7 @@ public class catalogue {
             }
 
         }
-
+        */
         return videol;
 
     }
@@ -114,34 +135,7 @@ public class catalogue {
             vv.setFields(fields);
             videolist.add(vv);
         } 
-        /*
-        ll = obj2.names();
-        JsonArray items = obj2.get("rh:doc").asArray();
-        int number = items.size();
-        for (JsonValue item : items) {
-            JsonObject obj3 = item.asObject();
-            ll = obj3.names();
-            int i = 0;
-            for (String l : ll) {
-                if (l.compareTo("video") == 0) {
-                    HashMap<String, String> fields = new HashMap();
-                    JsonObject video = obj3.get("video").asObject();
-                    List<String> names = video.names();
-                    for (String name : names) {
-                        JsonValue Value = video.get(name);
-                        String sValue = Value.toString();
-                        fields.put(name, sValue);
-
-                    }
-                    Video vv = new Video();
-                    vv.setFields(fields);
-                    videolist.add(vv);
-                }
-
-            }
-
-        }
-        */
+        
         return videolist;
     }
 
