@@ -4,6 +4,7 @@
     Author     : andy
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.LinkedList"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="com.myflix.myflix.stores.Video"%>
@@ -20,6 +21,7 @@
     </head>
     <body>
          <h1>Your Videos</h1>
+         <div class ="videos")>
          <%
             LinkedList<Video> lsVideos = (java.util.LinkedList<Video>) request.getAttribute("Videos");
             if (lsVideos != null) {
@@ -34,12 +36,25 @@
                     <h2 class="name"><%=name%></h2>
                     <h3 class="category">Catagory: <%=category%></h3>
                     <a href="/myflix/video/<%=suuid%>">
-                    <img src="http://104.196.177.101/pics/<%=thumb%>">
+                    <img src="http://34.73.114.48/pics/<%=thumb%>">
                     </a>
                     <%
                 }
             }
             
         %>
+         </div><!-- comment -->
+         <h2>Recomendations</h2>
+         <div class="Recomendations">
+             <%
+             ArrayList<String> recs=(java.util.ArrayList<String>) request.getAttribute("Recomendations");
+             for (String title:recs){
+                 %>
+                 <h3 class="category">: <%=title%></h3>
+                 <%
+             
+             }
+             %>
+         </div>
     </body>
 </html>

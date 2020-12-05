@@ -5,12 +5,15 @@
  */
 package com.myflix.myflix.servlets;
 
+import com.myflix.myflix.models.Recomendation;
 import com.myflix.myflix.models.catalogue;
 import com.myflix.myflix.stores.Video;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,13 +36,22 @@ public class Videos extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    Recomendation rrc=new Recomendation();
+    
+    public void init(ServletConfig config) throws ServletException {
+        
+    }
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         catalogue cc=new catalogue();
         LinkedList<Video> videos=cc.videos();
+        ArrayList<String> recs=rrc.getRecomendation((int)(100*Math.random()));
+        System.out.println(recs);
         RequestDispatcher rd = request.getRequestDispatcher("/videos.jsp");
         request.setAttribute("Videos", videos);
+        request.setAttribute("Recomendations",recs);
         rd.forward(request, response);
         
     }

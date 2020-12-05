@@ -36,7 +36,7 @@ public class categories {
     public LinkedList<Category> listcategories() throws IOException {
 
         LinkedList<Category> categorielist=new LinkedList();
-        String videos = "http://a41-catalogue.cloudapp.net:8080/myflix/categories";
+        String videos = "http://35.185.99.145/myflix/categories";
 
         JsonObject obj = new JsonObject();
         obj = Web.GetJson(videos);
