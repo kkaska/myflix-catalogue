@@ -17,11 +17,12 @@
     <script src="http://vjs.zencdn.net/4.11/video.js"></script>
         <link href="http://vjs.zencdn.net/4.11/video-js.css" rel="stylesheet">
     <script src="http://vjs.zencdn.net/4.11/video.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><!-- comment -->
         <title>Videos</title>
     </head>
     <body>
          <h1>Your Videos</h1>
-         <div class ="videos")>
+         <div class ="videos" style="float: left; border:1px solid #cccccc;")>
          <%
             LinkedList<Video> lsVideos = (java.util.LinkedList<Video>) request.getAttribute("Videos");
             if (lsVideos != null) {
@@ -44,17 +45,28 @@
             
         %>
          </div><!-- comment -->
-         <h2>Recomendations</h2>
-         <div class="Recomendations">
+         <h2>Recommendations</h2>
+         <div class="Recomendations" float: right; border:1px solid #cccccc;>
+             
              <%
              ArrayList<String> recs=(java.util.ArrayList<String>) request.getAttribute("Recomendations");
+             if (recs!=null){
+                 %><ul><%
              for (String title:recs){
                  %>
-                 <h3 class="category">: <%=title%></h3>
+                 <li class="category">: <%=title%></li>
                  <%
-             
+               }
+%></ul><%
+             }else{
+                  %>
+                 <p>N recommendations available<p>
+                 <%
+
              }
+
              %>
+        
          </div>
     </body>
 </html>
