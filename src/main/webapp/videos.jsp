@@ -36,11 +36,16 @@
                     String suuid=fields.get("uuid").replaceAll("\"", "");
                     String category=fields.get("category").replaceAll("\"", "");
                     %>
-                    <h2 class="name"><%=name%></h2>
-                    <h3 class="category">Catagory: <%=category%></h3>
-                    <a href="/myflix/video/<%=suuid%>">
+                    <div class ="video" style="border:2px solid #c0ccff; padding:10px;font-size:7px; margin: 10px")>
+
+                    <h2 class="name" style="background-color: #eFeFeF;"><%=name%></h2>
+                    
+                    <a href="/myflix/video/<%=suuid%>" style="border:2px solid #c0ccff; padding:10px;font-size:7px; margin: 10px")>
+>
                     <img src="http://34.73.114.48/pics/<%=thumb%>">
                     </a>
+                    <h3 class="category" style="background-color: #eFeFeF; margin: 10px">Catagory: <%=category%></h3>
+                    </div>
                     <%
                 }
             }
