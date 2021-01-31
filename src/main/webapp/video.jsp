@@ -18,30 +18,11 @@
     </head>
     <body>
         <h1>Your video</h1>
-        <%
-        Video video = (Video) request.getAttribute("Video");
-            if (video != null) {
-                
-                    HashMap<String,String> fields= video.getfields();
-                    String server=fields.get("server").replaceAll("\"", "");
-                    String name=fields.get("Name").replaceAll("\"", "");
-                    String pic=fields.get("pic").replaceAll("\"", "");
-                    String file=fields.get("file").replaceAll("\"", "");
-                    %>
-                    <div id="instructions">
-
-      <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px"
-	     controls preload="none" poster='http://104.196.177.101/pics/<%=pic%>'
-	     data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
-	<source src="http://http://34.72.153.240/" type='video/mp4' />
-	
-      </video>
-      </div>
-                    <%
-            }
-           
-            
-        %>
+             <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px"
+             controls preload="none" poster='pics/bbb.png'
+             data-setup='{ }'>
+        <source src="mp4/bbb.mp4" type='video/mp4' />
+       </video>
         <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
