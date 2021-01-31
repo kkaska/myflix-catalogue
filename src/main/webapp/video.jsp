@@ -33,7 +33,7 @@
       <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px"
 	     controls preload="none" poster='http://104.196.177.101/pics/<%=pic%>'
 	     data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
-	<source src="http://34.73.114.48/mp4/<%=file%>" type='video/mp4' />
+	<source src="http://http://34.72.153.240/" type='video/mp4' />
 	
       </video>
       </div>
