@@ -11,6 +11,6 @@
     </head>
     <body>
         <h1>Welcome</h1>
-        <a href="/myflix/videos">Got to videos</a>
+        <a href="/myflix/videos">Go to videos</a>
     </body>
 </html>
