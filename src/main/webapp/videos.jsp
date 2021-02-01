@@ -42,7 +42,7 @@
                     
                     <a href="/myflix/video/<%=suuid%>" style="border:2px solid #c0ccff; padding:10px;font-size:7px; margin: 10px")>
 >
-                    <img src="http://34.73.114.48/pics/<%=thumb%>">
+                    <img src="http://34.72.153.240//pics/<%=thumb%>">
                     </a>
                     <h3 class="category" style="background-color: #eFeFeF; margin: 10px">Catagory: <%=category%></h3>
                     </div>
