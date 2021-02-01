@@ -11,6 +11,6 @@
     </head>
     <body class="text-center" data-pt-ext-theme="dark" data-pt-ext-size="large">
         <h1>Welcome</h1>
-        <a href="/myflix/video">Go to videos</a>
+        <a href="/myflix/video.jsp">Go to videos</a>
     </body>
 </html>
