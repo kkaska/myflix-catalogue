@@ -18,9 +18,7 @@
     </head>
     <body>
         <h1>Your video</h1>
-        <iframe width="1920" height="1080"
-src="http://34.72.153.240/">
-</iframe>
+        <iframe src="http://34.72.153.240/"  width="100%" height="95%"> </iframe>
         <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
